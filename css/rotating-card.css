@@ -1,0 +1,364 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+body {
+  margin-top: 60px;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  background-color: #E5E9ED;
+}
+.btn:hover,
+.btn:focus,
+.btn:active{
+  outline: 0 !important;
+}
+
+h4 {
+  font-size: 16px;
+  font-family: 'Lato-bold', sans-serif;
+  margin-bottom: 5px;
+}
+p {
+  line-height: 18px;
+  font-family: 'Lato', sans-serif;
+  margin: 0 0 20px;
+}
+/* entire container, keeps perspective */
+.card-container {
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  margin-bottom: 30px;
+}
+/* flip the pane when hovered */
+.card-container:not(.manual-flip):hover .card,
+.card-container.flipped.manual-flip .card{
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+
+.card-container.static:hover .card, 
+.card-container.static.flipped .card {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+/* flip speed goes here */
+.card {
+  -webkit-transition: -webkit-transform .5s;
+  -moz-transition: -moz-transform .5s;
+  -o-transition: -o-transform .5s;
+  transition: transform .5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  box-shadow: 0 .5px 1px rgba(0,0,0,.3);
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+  z-index: 3;
+}
+
+.flip {
+  position: absolute;
+  bottom: 3px;
+}
+
+.back .btn-simple{
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+}
+/*        Style       */
+
+
+.card{
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 4px;
+  color: #444444;
+}
+.card-container, .front, .back {
+  margin: auto;
+  width: 323px;
+  height: 635px;
+  border-radius: 3px;
+}
+.card .cover{
+
+  background-image: url("../images/user_1_blur.jpg");
+  background-position: 0px -50px;
+  height: 132px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+}
+.card .cover img{
+  width: 100%;
+}
+.card .user {
+  padding: 5px;
+
+  border-radius: 0%;
+  display: block;
+  height: 150px;
+  margin: -105px auto 0;
+  overflow: hidden;
+  width: 150px;
+}
+.card .user img{
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 4px solid #FFFFFF;
+  width: 100%;
+}
+
+.card .content{
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  margin-top: -15px;
+  padding: 10px 20px 20px;
+}
+.card .content .main {
+  text-align: center;
+  min-height: 160px;
+}
+.card .back .content .main {
+  height: 215px;
+}
+.card .name {
+  font-size: 20px;
+  font-family: 'Raleway-bold', sans-serif;
+  line-height: 28px;
+  margin: 5px 0 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+.card h5{
+  font-family: 'Raleway-bold', sans-serif;
+  font-size: 16px;
+  margin: 0px 0;
+  font-weight: 400;
+  line-height: 20px;
+}
+.card .profession{
+  color: #999999;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.card .footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: #999999;
+  margin: 30px 0 0 -20px;
+  padding: 40px 0 0 0;
+  text-align: center;
+  border-top: 1px solid #dddfe4;
+}
+
+.card .footerBack {
+  width:100%;
+  position: absolute;
+  bottom:0;
+  border-top: 1px solid #dddfe4;
+  color: #999999;
+  margin: 0 0 0 0;
+  padding: 40px 0 0 0;
+  text-align: center;
+}
+
+.card .footer .social-links{
+  font-size: 18px;
+}
+.card .footer .social-links a{
+  margin: 0 7px;
+}
+.card .footer .btn-simple{
+  margin-top: -6px;
+  margin-left: -45px;
+}
+.card .footerBack .btn-simple{
+  margin-top: -6px;
+  margin: 0 0 0 115px;
+}
+.card .header {
+  margin-bottom: 10px;
+  background: #dddfe4;
+  padding: 10px 0 0 0 ;
+  height: 40px;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #EEEEEE;
+  color: #727a8e;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/*      Just for presentation        */
+
+.title{
+  color: #506A85;
+  text-align: center;
+  font-weight: 300;
+  font-size: 44px;
+  margin-bottom: 30px;
+  line-height: 90%;
+}
+.title small{
+  font-size: 17px;
+  color: #999;
+  text-transform: uppercase;
+  margin: 0;
+}
+.space-50{
+  height: 50px;
+  display: block;
+}
+.space-200{
+  height: 200px;
+  display: block;
+}
+.white-board{
+  background-color: #FFFFFF;
+  min-height: 200px;
+  padding: 60px 60px 20px;
+}
+.ct-heart{
+  color: #F74933;
+}
+
+pre.prettyprint{
+  background-color: #ffffff;
+  border: 1px solid #999;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: left;
+}
+.atv, .str{
+  color: #05AE0E;
+}
+.tag, .pln, .kwd{
+  color: #3472F7;
+}
+.atn{
+  color: #2C93FF;
+}
+.pln{
+  color: #333;
+}
+.com{
+  color: #999;
+} 
+
+.btn-simple{
+  opacity: .8;
+  color: #428bca;
+  background-color: transparent;
+  transition: all .3s ease; 
+}
+
+.btn-simple:hover,
+.btn-simple:focus{
+  background-color: transparent;
+  box-shadow: none;
+  color: #65AFF0;
+  opacity: 1;
+}
+.btn-simple i{
+  font-size: 16px;
+}
+
+.userInteract {
+  height: 38px;
+  width: 114.3%;
+  margin-left: -20px;
+  border-top: 1px solid #727a8e;
+  border-bottom: 1px solid #727a8e; 
+  color: #727a8e;
+  box-sizing: border-box;
+}
+
+.messageBtn {
+  height:36px;
+  width: 50%;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+ 
+  display:inline-block;
+  text-align: center;
+  margin-right:-4px;
+  border-right: 1px solid #727a8e;
+  padding-top: 8px;
+  transition: all .3s ease;
+}
+
+.messageBtn:hover {
+  background-color: #dddfe4;
+  cursor: pointer;
+}
+
+.followBtn {
+  height:36px;
+  width: 50%;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+
+  display:inline-block;
+  text-align: center;
+  margin: 0;
+  padding-top: 8px;
+}
+.followBtn:hover {
+  cursor: pointer;
+  background-color: #dddfe4;
+  transition: all .3s ease;
+}
+
+/*       Fix bug for IE      */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .front, .back{
+    -ms-backface-visibility: visible;    
+    backface-visibility: visible;
+  }
+
+  .back {
+    visibility: hidden;
+    -ms-transition: all 0.2s cubic-bezier(.92,.01,.83,.67);
+  }
+  .front{
+    z-index: 4;
+  }
+  .card-container:hover .back{
+    text-align: center;
+    z-index: 5;
+    visibility: visible;
+  }
+}

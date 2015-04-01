@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='css/bootstrap.css' rel='stylesheet' />
+    <link href='css/rotating-card.css' rel='stylesheet' />
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1 class="title">
+          Profile card flip prototype
+        </h1>
+        <!-- <div class="col-sm-1"></div> -->
+
+        <div class="card-container manual-flip">
+          <div class="card">
+            <div class="front">
+              <div class="cover">
+
+              </div>
+              <div class="user">
+                <img class="img-circle" src="images/user_1.jpg"/>
+              </div>
+              <div class="content">
+                <div class="main">
+                  <h3 class="name">Hank Hill</h3>
+                  <p class="profession">Teacher at Midtown Elementary</p>
+                  <div class="userInteract">
+                    <div class="messageBtn">Message</div>
+                    <div class="followBtn">Follow</div>
+                  </div>
+                  <h4>Subjects</h4>
+                  <p>Algebra, Biology, Calculus</p>
+                  <h4>Grades</h4>
+                  <p>Second</p>
+                  <h4>Bio</h4>
+                  <p>This is my bio and the are that I can write about myself in. In my free time I enjoy turtle wrestling, rock climbing, extreme ironing and drawing water bottles with blue pencils.  When I was young, my sister received a puppy for Christmas but slept with it that night and must have rolled over in her sleep and suffocated it because it was dead the next morning. </p>
+                </div>
+                <div class="footer">
+                  <button class="btn btn-simple flip" onclick="rotateCard(this)">
+                    Flip Card <i class="fa fa-mail-forward"></i>
+                  </button>
+                </div>
+              </div>
+            </div> <!-- end front panel -->
+            <div class="back">
+              <div class="header">
+                <h5>Hank Hill</h5>
+              </div>
+              <div class="content">
+                <div class="main">
+                  <h4>Subjects</h4>
+                  <p>Algebra, Biology, Calculus</p>
+                  <h4>Grades</h4>
+                  <p>Second</p>
+                  <h4>Bio</h4>
+                  <p>This is my bio and the are that I can write about myself in. In my free time I enjoy turtle wrestling, rock climbing, extreme ironing and drawing water bottles with blue pencils.  When I was young, my sister received a puppy for Christmas but slept with it that night and must have rolled over in her sleep and suffocated it because it was dead the next morning. </p>
+                  <div class="social-links text-center">
+                    <a href="http://cretive-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                    <a href="http://cretive-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                    <a href="http://cretive-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="footerBack">
+                <button class="btn btn-simple"  onclick="rotateCard(this)">
+                  <i class="fa fa-reply"></i> Back
+                </button>
+              </div>
+            </div> <!-- end back panel -->
+          </div> <!-- end card -->
+        </div> <!-- end card-container -->
+
+        <!--         <div class="col-sm-1"></div> -->
+
+
+        <div class="space-200"></div>    
+      </div>
+
+
+
+      <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+      <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+      <script type="text/javascript">
+        $().ready(function(){
+          $('[rel="tooltip"]').tooltip();
+
+        });
+
+        function rotateCard(btn){
+          var $card = $(btn).closest('.card-container');
+          console.log($card);
+          if($card.hasClass('flipped')){
+            $card.removeClass('flipped');
+          } else {
+            $card.addClass('flipped');
+          }
+        }
+      </script>
+
+
+
+      </body>
+    </html>
